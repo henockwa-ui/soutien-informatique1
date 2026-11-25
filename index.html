@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tickets de soutien</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Tickets de soutien</h1>
+      <p>Suivez les demandes de soutien informatique jusqu’à leur résolution.</p>
+    </header>
+
+    <section aria-labelledby="new-ticket">
+      <h2 id="new-ticket">Nouvelle demande</h2>
+      <form id="ticket-form">
+        <label>Sujet <input name="subject" required maxlength="100" placeholder="Ex. Imprimante inaccessible"></label>
+        <label>Description <textarea name="description" rows="3" maxlength="500"></textarea></label>
+        <label>Priorité
+          <select name="priority">
+            <option value="normal">Normale</option>
+            <option value="urgent">Urgente</option>
+          </select>
+        </label>
+        <button type="submit">Ajouter la demande</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="requests">
+      <h2 id="requests">Demandes</h2>
+      <label>Afficher
+        <select id="filter">
+          <option value="all">Toutes les demandes</option>
+          <option value="urgent-open">Urgentes et non résolues</option>
+          <option value="resolved">Résolues</option>
+        </select>
+      </label>
+      <p id="count" role="status"></p>
+      <ul id="tickets"></ul>
+    </section>
+    <p id="storage-error" role="alert"></p>
+  </main>
+</body>
+</html>
